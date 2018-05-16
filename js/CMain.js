@@ -2,6 +2,7 @@ var defaultLifeCycle = AQCore.defaultLifeCycle;
 var Utils = AQCore.Utils;
 
 function CMain(oData) {
+  
     var _bUpdate;
     var _iCurResource = 0;
     var RESOURCE_TO_LOAD = 0;
@@ -18,8 +19,7 @@ function CMain(oData) {
    
 
     this.initContainer = function () {
-       
-
+    
         s_oCanvas = document.getElementById("canvas");
         s_oStage = new createjs.Stage(s_oCanvas);
         s_oStage.preventSelection = true;
@@ -47,6 +47,7 @@ function CMain(oData) {
     
 
     this.preloaderReady = function () {
+
         if (DISABLE_SOUND_MOBILE === false || s_bMobile === false) {
             this._initSounds();
         }
@@ -58,7 +59,7 @@ function CMain(oData) {
     this.soundLoaded = function () {
         _iCurResource++;
         var iPerc = Math.floor(_iCurResource / RESOURCE_TO_LOAD * 100);
-        _oPreloader.refreshLoader(iPerc);
+       // _oPreloader.refreshLoader(iPerc);
 
         if (_iCurResource === RESOURCE_TO_LOAD) {
             s_oMain._onPreloaderComplete();
@@ -93,11 +94,12 @@ function CMain(oData) {
     };
 
     this._loadImages = function () {
+     
         s_oSpriteLibrary.init(this._onImagesLoaded, this._onAllImagesLoaded, this);
 
         s_oSpriteLibrary.addSprite("logo_game", "./sprites/logo_game.png");
         s_oSpriteLibrary.addSprite("logo_menu", "./sprites/logo_menu.png");
-        s_oSpriteLibrary.addSprite("but_play", "./sprites/but_play.png");
+        s_oSpriteLibrary.addSprite("but_play", "./sprites/but_start.png");
         s_oSpriteLibrary.addSprite("ctl_logo", "./sprites/ctl_logo.png");
         s_oSpriteLibrary.addSprite("but_credits", "./sprites/but_credits.png");
         s_oSpriteLibrary.addSprite("but_yes", "./sprites/but_yes.png");
@@ -141,7 +143,7 @@ function CMain(oData) {
         _iCurResource++;
         var iPerc = Math.floor(_iCurResource / RESOURCE_TO_LOAD * 100);
         //console.log("PERC: "+iPerc);
-        _oPreloader.refreshLoader(iPerc);
+       // _oPreloader.refreshLoader(iPerc);
 
         if (_iCurResource === RESOURCE_TO_LOAD) {
             s_oMain._onPreloaderComplete();
@@ -167,7 +169,10 @@ function CMain(oData) {
     };
 
     this.gotoMenu = function () {
-        defaultLifeCycle.informReady()
+      //  console.log('game start')
+        defaultLifeCycle.informReady();
+       // _oGame = new CGame(_oData);
+       // _iState = STATE_GAME;
         _oMenu = new CMenu();
         _iState = STATE_MENU;
     };
@@ -263,6 +268,7 @@ function CMain(oData) {
         _oData.shouldWin = data.shouldWin;
         _oData.backgroundImage = _additionalInfo.backgroundImage;
         //ADD PRELOADER
+      //  this.gotoMenu();
         _oPreloader = new CPreloader();
     }
 
@@ -276,6 +282,11 @@ function CMain(oData) {
     //setting call back handlers
     defaultLifeCycle.setOnDataCallback(this._onData.bind(this));
     defaultLifeCycle.setOnResetCallback(this._onReset.bind(this));
+
+    if(_props.devt){
+        this._onData(_props.data)
+    }
+
 }
 
 var s_bMobile;

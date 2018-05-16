@@ -17,20 +17,20 @@ function CMenu(){
         _oBg = createBitmap(s_oSpriteLibrary.getSprite('bg_menu'));
         s_oStage.addChild(_oBg);
 
-        var oSprite = s_oSpriteLibrary.getSprite('logo_menu');
+       /* var oSprite = s_oSpriteLibrary.getSprite('logo_menu');
         var oLogo = createBitmap(oSprite);
         oLogo.regX = oSprite.width/2;
         oLogo.regY = oSprite.height/2;
         oLogo.x = CANVAS_WIDTH/2
         oLogo.y = 500;
-        s_oStage.addChild(oLogo);
+        s_oStage.addChild(oLogo);*/
 
         var oSprite = s_oSpriteLibrary.getSprite('but_play');
-        _oButPlay = new CGfxButton((CANVAS_WIDTH/2),CANVAS_HEIGHT -540,oSprite,s_oStage);
+        _oButPlay = new CGfxButton((CANVAS_WIDTH/2),CANVAS_HEIGHT -450,oSprite,s_oStage);
         _oButPlay.addEventListener(ON_MOUSE_UP, this._onButPlayRelease, this);
         _oButPlay.pulseAnimation();
      
-        var oSprite = s_oSpriteLibrary.getSprite('but_credits');
+       /* var oSprite = s_oSpriteLibrary.getSprite('but_credits');
         var pFirstPos = {x:oSprite.width/2 + 10,y:oSprite.height/2 + 10};
         var pSecondPos = {x:pFirstPos.x + oSprite.width + 10,y:oSprite.height/2 + 10};
         _pStartPosCredits = {x: pFirstPos.x, y: pFirstPos.y};
@@ -67,7 +67,7 @@ function CMenu(){
             //_pStartPosFullscreen = {x:_pStartPosCredits.x + oSprite.width/2 + 10,y:(oSprite.height/2) + 10};
             _oButFullscreen = new CToggle(_pStartPosFullscreen.x,_pStartPosFullscreen.y,oSprite,s_bFullscreen, s_oStage);
             _oButFullscreen.addEventListener(ON_MOUSE_UP,this._onFullscreenRelease,this);
-        }
+        }*/
 
         _oFade = new createjs.Shape();
         _oFade.graphics.beginFill("black").drawRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);
@@ -85,7 +85,7 @@ function CMenu(){
         _oButPlay = null;
         _oFade.visible = false;
         
-        if(ENABLE_CREDITS){
+       /* if(ENABLE_CREDITS){
             _oCreditsBut.unload();
         }
         
@@ -96,7 +96,7 @@ function CMenu(){
         
         if (_fRequestFullScreen && screenfull.enabled){
                 _oButFullscreen.unload();
-        }
+        }*/
         
         s_oStage.removeAllChildren();
         _oBg = null;
@@ -104,7 +104,7 @@ function CMenu(){
     };
     
     this.refreshButtonPos = function(iNewX,iNewY){
-        if(ENABLE_CREDITS){
+      /*  if(ENABLE_CREDITS){
             _oCreditsBut.setPosition(_pStartPosCredits.x + iNewX,iNewY + _pStartPosCredits.y);
         }
         if(DISABLE_SOUND_MOBILE === false || s_bMobile === false){
@@ -112,10 +112,10 @@ function CMenu(){
         }
         if (_fRequestFullScreen && screenfull.enabled){
                 _oButFullscreen.setPosition(_pStartPosFullscreen.x + iNewX, _pStartPosFullscreen.y + iNewY);
-        }
+        }*/
     };
     
-    this._onAudioToggle = function(){
+   /* this._onAudioToggle = function(){
         Howler.mute(s_bAudioActive);
         s_bAudioActive = !s_bAudioActive;
     };
@@ -138,7 +138,7 @@ function CMenu(){
 	}
 	
 	sizeHandler();
-    };
+    };*/
     
     this._onButPlayRelease = function(){
         

@@ -8,11 +8,11 @@ function CPreloader(){
     var _oContainer;
     
     this._init = function(){
-       s_oSpriteLibrary.init( this._onImagesLoaded,this._onAllImagesLoaded, this );
-       s_oSpriteLibrary.addSprite("bg_menu","./sprites/bg_menu.jpg");
-       s_oSpriteLibrary.addSprite("progress_bar","./sprites/progress_bar.png");
-       s_oSpriteLibrary.loadSprites();
-       
+     //  s_oSpriteLibrary.init( this._onImagesLoaded,this._onAllImagesLoaded, this );
+      // s_oSpriteLibrary.addSprite("bg_menu","./sprites/bg_menu.jpg");
+      // s_oSpriteLibrary.addSprite("progress_bar","./sprites/progress_bar.png");
+      // s_oSpriteLibrary.loadSprites();
+      s_oMain.preloaderReady();
        _oContainer = new createjs.Container();
        s_oStage.addChild(_oContainer); 
     };
@@ -31,7 +31,7 @@ function CPreloader(){
     };
     
     this._onAllImagesLoaded = function(){
-        this.attachSprites();
+      //  this.attachSprites();
         
         s_oMain.preloaderReady();
     };
@@ -71,10 +71,10 @@ function CPreloader(){
     };
     
     this.refreshLoader = function(iPerc){
-        _oLoadingText.text = iPerc+"%";
+       // _oLoadingText.text = iPerc+"%";
         
         
-        _oMaskPreloader.graphics.clear();
+        //_oMaskPreloader.graphics.clear();
         var iNewMaskWidth = Math.floor((iPerc*_iMaskWidth)/100);
         _oMaskPreloader.graphics.beginFill("rgba(255,255,255,0.01)").drawRect(_oProgressBar.x, _oProgressBar.y, iNewMaskWidth,_iMaskHeight);
     };

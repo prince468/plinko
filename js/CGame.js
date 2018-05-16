@@ -189,6 +189,7 @@ function CGame(oData) {
             this.gameOver(iPrizeWin, true);
             return;
         }
+        
 
         if (_iNumBallRemaining === 0) {
             defaultLifeCycle.join(null, oData.backgroundImage, false, null)
