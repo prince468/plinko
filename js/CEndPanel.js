@@ -20,7 +20,7 @@ function CEndPanel(iPrizeIndex, bHasWin){
         _oPanelContainer = new createjs.Container();        
         s_oStage.addChild(_oPanelContainer);
         
-        var oSprite = s_oSpriteLibrary.getSprite('msg_box');
+        var oSprite = s_oSpriteLibrary.getSprite('msg_box'); 
         var oPanel = createBitmap(oSprite);        
         oPanel.regX = oSprite.width/2;
         oPanel.regY = oSprite.height/2;
@@ -83,28 +83,28 @@ function CEndPanel(iPrizeIndex, bHasWin){
             
         }else {
 
-            var oTitleGlow = new createjs.Text(TEXT_GAMEOVER," 60px "+PRIMARY_FONT, "#f9de00");
-            oTitleGlow.y = -oSprite.height/2 + 280;
+            var oTitleGlow = new createjs.Text(TEXT_GAMEOVER," 120px "+PRIMARY_FONT, "#f9de00");
+            oTitleGlow.y = -oSprite.height/2 + 300;
             oTitleGlow.textAlign = "center";
             oTitleGlow.textBaseline = "middle";
-            oTitleGlow.lineWidth = 600;
+            oTitleGlow.lineWidth = 680;
             oTitleGlow.lineHeight = 70;
             oTitleGlow.alpha = 0.7;
             oTitleGlow.filters = [
                 // new createjs.ColorFilter(0, 0, 0, 1, 255, 0, 0),
                  new createjs.BlurFilter(10, 10, 20)
              ];
-             oTitleGlow.cache(-200,-70, 400, 200);
+             oTitleGlow.cache(-260,-70, 550, 200);
  
              _oPanelContainer.addChild(oTitleGlow);
             _oPanelContainer.addChild(oTitleGlow);
 
 
-            var oTitle = new createjs.Text(TEXT_GAMEOVER," 60px "+PRIMARY_FONT, "#f9de00");
-            oTitle.y = -oSprite.height/2 + 280;
+            var oTitle = new createjs.Text(TEXT_GAMEOVER," 120px "+PRIMARY_FONT, "#f9de00");
+            oTitle.y = -oSprite.height/2 + 300;
             oTitle.textAlign = "center";
             oTitle.textBaseline = "middle";
-            oTitle.lineWidth = 600;
+            oTitle.lineWidth = 680;
             oTitle.lineHeight = 70;
             _oPanelContainer.addChild(oTitle);
             

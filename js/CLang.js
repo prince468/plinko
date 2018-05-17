@@ -1,4 +1,4 @@
-TEXT_GAMEOVER  = "GameOver";
+TEXT_GAMEOVER  = "Game Over";
 //TEXT_GAMEOVER  = "I'M SORRY,\nNO MORE BALLS TO PLAY";
 TEXT_WIN    = "Congratulations";
 //TEXT_WIN    = "CONGRATULATIONS! YOU WON";
@@ -10,4 +10,4 @@ TEXT_SHARE_TITLE = "Congratulations!";
 TEXT_SHARE_MSG1 = "You collected <strong>";
 TEXT_SHARE_MSG2 = " points</strong>!<br><br>Share your score with your friends!";
 TEXT_SHARE_SHARE1 = "My score is ";
-TEXT_SHARE_SHARE2 = " points! Can you do better";
+TEXT_SHARE_SHARE2 = " points! Can you do better"; 

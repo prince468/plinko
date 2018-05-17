@@ -15,7 +15,7 @@ function CMenu(){
     
     this._init = function(){
         _oBg = createBitmap(s_oSpriteLibrary.getSprite('bg_menu'));
-        s_oStage.addChild(_oBg);
+        s_oStage.addChild(_oBg); 
 
        /* var oSprite = s_oSpriteLibrary.getSprite('logo_menu');
         var oLogo = createBitmap(oSprite);
@@ -24,9 +24,17 @@ function CMenu(){
         oLogo.x = CANVAS_WIDTH/2
         oLogo.y = 500;
         s_oStage.addChild(oLogo);*/
+        var oTitle = new createjs.Text('Tap start to play'," 70px "+PRIMARY_FONT, "#ffffff");
+        oTitle.x = CANVAS_WIDTH/2
+        oTitle.y = 220;
+        oTitle.textAlign = "center";
+        oTitle.textBaseline = "middle";
+        oTitle.lineWidth = 600;
+        oTitle.lineHeight = 70;
+        s_oStage.addChild(oTitle);
 
         var oSprite = s_oSpriteLibrary.getSprite('but_play');
-        _oButPlay = new CGfxButton((CANVAS_WIDTH/2),CANVAS_HEIGHT -450,oSprite,s_oStage);
+        _oButPlay = new CGfxButton((CANVAS_WIDTH/2),CANVAS_HEIGHT -250,oSprite,s_oStage);
         _oButPlay.addEventListener(ON_MOUSE_UP, this._onButPlayRelease, this);
         _oButPlay.pulseAnimation();
      

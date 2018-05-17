@@ -15,7 +15,7 @@ function CMain(oData) {
     var _oHelp;
     var _oGame;
     var _props = oData.props;
-    var _additionalInfo = _props.data.additionalInfo;
+    var _additionalInfo = _props.data.additionalInfo; 
    
 
     this.initContainer = function () {
@@ -104,12 +104,12 @@ function CMain(oData) {
         s_oSpriteLibrary.addSprite("but_credits", "./sprites/but_credits.png");
         s_oSpriteLibrary.addSprite("but_yes", "./sprites/but_yes.png");
         s_oSpriteLibrary.addSprite("but_no", "./sprites/but_no.png");
-        s_oSpriteLibrary.addSprite("bg_menu", "./sprites/bg_menu.jpg");
         s_oSpriteLibrary.addSprite("audio_icon", "./sprites/audio_icon.png");
         s_oSpriteLibrary.addSprite("but_fullscreen", "./sprites/but_fullscreen.png");
         s_oSpriteLibrary.addSprite("but_restart", "./sprites/but_restart.png");
         s_oSpriteLibrary.addSprite("but_home", "./sprites/but_home.png");
 
+        s_oSpriteLibrary.addSprite("bg_menu", _additionalInfo.bg_menu);
         s_oSpriteLibrary.addSprite("bg_game", _additionalInfo.backgroundImage);
         s_oSpriteLibrary.addSprite("side_right", _additionalInfo.side_right);
         s_oSpriteLibrary.addSprite("side_left", _additionalInfo.side_left);
@@ -245,6 +245,7 @@ function CMain(oData) {
  
 
     defaultLifeCycle.setAppData({
+        bg_menu: "https://s3-ap-southeast-1.amazonaws.com/funminiapps/ftdata/plinko/bg_menu.jpg",
         backgroundImage: "https://s3-ap-southeast-1.amazonaws.com/funminiapps/ftdata/plinko/bg_game.jpg",
         side_right: "https://s3-ap-southeast-1.amazonaws.com/funminiapps/ftdata/plinko/side_right.png",
         side_left: "https://s3-ap-southeast-1.amazonaws.com/funminiapps/ftdata/plinko/side_left.png",
